@@ -1,0 +1,83 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-header-panel/paper-header-panel.html">
+<link rel="import" href="../../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/paper-menu-button/paper-menu-button.html">
+<link rel="import" href="../../bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../bower_components/paper-drawer-panel/paper-drawer-panel.html">
+<link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../../bower_components/paper-styles/paper-styles.html">
+
+<link rel="import" href="../buttons-element/buttons-element.html">
+
+<dom-module id="koffie-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+        --paper-toolbar-background: var(--theme-color, #795548);
+      }
+      meta{
+        color = --theme-color;
+      }
+
+    </style>
+    <paper-toolbar class=medium-tall>
+      <span class="title">Koffie</span>
+    </paper-toolbar>
+    <!--
+    <paper-drawer-panel>
+      <paper-header-panel drawer>
+        <paper-toolbar><div>Koffie Menu</div></paper-toolbar>
+        <iron-selector>
+           <div>Test</div>
+        </iron-selector>
+      </paper-header-panel>
+      <paper-header-panel main mode="waterfall">
+        <paper-toolbar class="koffie">
+          <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+          <span class="title">Koffie</span>
+          <paper-icon-button icon="refresh"></paper-icon-button>
+          <paper-menu-button>
+            <paper-icon-button icon="add" class="dropdown-trigger">+</paper-icon-button>
+            <paper-menu class="dropdown-content">
+              <paper-item>Koffie</paper-item>
+            </paper-menu>
+          </paper-menu-button>
+        </paper-toolbar>
+      </paper-header-panel>
+    </paper-drawer-panel>
+
+    <iron-pages selected="0">
+
+      <div>Two</div>
+      <div>Three</div>
+    </iron-pages>
+  -->
+    <buttons-element></buttons-element>
+
+    <!-- <paper-fab icon="add">+</paper-fab> -->
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'koffie-app',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'koffie-app',
+        },
+      },
+
+    });
+
+
+  </script>
+</dom-module>

@@ -1,0 +1,7 @@
+{
+  "name": "koffie",
+  "short_name": "koffie",
+  "description": "Build a koffie app from scratch",
+  "start_url": "/",
+  "display": "standalone"
+}

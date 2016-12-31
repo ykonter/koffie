@@ -1,0 +1,32 @@
+<html><head><link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/paper-input/paper-textarea.html">
+<link rel="import" href="../../bower_components/iron-list/iron-list.html">
+
+</head><body><dom-module id="buttons-element">
+  <template>
+    <style>
+    </style>
+
+      <p>
+        Press one of the following to submit a drink to the database.
+      </p>
+      <paper-button label="koffie" on-tap="kPressed" raised="">Koffie</paper-button>
+      <paper-button label="thee" on-tap="kPressed" raised="">Thee</paper-button>
+      <paper-button label="water" on-tap="kPressed" raised="">Water</paper-button>
+      <paper-button label="soep" on-tap="kPressed" raised="">Soep</paper-button>
+      <paper-textarea id="outputArea" label="Recent entries"></paper-textarea>
+      <paper-textarea id="outputQuery" label="Recent entries"></paper-textarea>
+
+      <p>
+        An overview of recent drinks will apear here.
+      </p>
+    <iron-ajax id="ajaxer" auto="false" url="http://ykonter.nl/koffie/library/koffie_push.php" handle-as="text" on-response="_ajaxResponded" debounce-duration="300">
+    </iron-ajax>
+
+
+  </template>
+  <script>Polymer({is:"buttons-element",properties:{aOut:{type:String,notify:!0},ajaxResponse:{type:String}},kPressed:function(t){var e=t.target.getAttribute("label"),a='{"key":"12345", "drink":"'.concat(e,'"}');this.$.ajaxer.setAttribute("params",a),this.$.ajaxer.generateRequest(),this.$.outputArea.setAttribute("value",a)},_ajaxResponded:function(t){console.log("anything?");var e=t.target.getAttribute("lastResponse");this.$.outputQuery.innerHTML=e}});</script>
+</dom-module>
+</body></html>

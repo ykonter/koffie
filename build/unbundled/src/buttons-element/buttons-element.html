@@ -27,6 +27,6 @@
 
 
   </template>
-  <script>Polymer({is:"buttons-element",properties:{aOut:{type:String,notify:!0},ajaxResponse:{type:String}},kPressed:function(t){var e=t.target.getAttribute("label"),a='{"key":"12345", "drink":"'.concat(e,'"}');this.$.ajaxer.setAttribute("params",a),this.$.ajaxer.generateRequest(),this.$.outputArea.setAttribute("value",a)},_ajaxResponded:function(t){console.log("anything?");var e=t.target.getAttribute("lastResponse");this.$.outputQuery.innerHTML=e}});</script>
+  <script>Polymer({is:"buttons-element",properties:{aOut:{type:String,notify:!0},ajaxResponse:{type:String}},kPressed:function(t){var e=t.target.getAttribute("label"),a='{"key":"12345", "drink":"'.concat(e,'"}');this.$.ajaxer.setAttribute("params",a),this.$.ajaxer.generateRequest(),this.$.outputArea.setAttribute("value",a)},_ajaxResponded:function(t){console.log("anything?");var e=this.$.ajaxer.lastResponse;console.log(e),this.$.outputQuery.innerHTML=e}});</script>
 </dom-module>
 </body></html>
